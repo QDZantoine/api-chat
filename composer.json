@@ -68,7 +68,10 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
-        ]
+        ],
+        "cache-clear": [
+			"sudo -u www-data bin/console cache:clear"
+		]
     },
     "conflict": {
         "symfony/symfony": "*"
