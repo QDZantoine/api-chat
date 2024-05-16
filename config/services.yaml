@@ -6,20 +6,32 @@
 parameters:
 
 services:
-    # default configuration for services in *this* file
-    _defaults:
-        autowire: true      # Automatically injects dependencies in your services.
-        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
-        $fixtureUserPassword: '%env(FIXTURE_USER_PASSWORD)%'
+  # default configuration for services in *this* file
+  _defaults:
+    autowire: true # Automatically injects dependencies in your services.
+    autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+    bind: # defines the scalar arguments once and apply them to any service defined/created in this file
+      $fixtureUserPassword: '%env(FIXTURE_USER_PASSWORD)%'
+      #$projectDir: '%kernel.project_dir%'
+      #$adminEmail: '%env(ADMIN_EMAIL)%'
+      #$contactEmail: '%env(CONTACT_EMAIL)%'
+      #$noreplyEmail: '%env(NOREPLY_EMAIL)%'
+      #$locales: '%app_locales%'
+      #$defaultLocale: '%app_locale%'
 
-    # makes classes in src/ available to be used as services
-    # this creates a service per class whose id is the fully-qualified class name
-    App\:
-        resource: '../src/'
-        exclude:
-            - '../src/DependencyInjection/'
-            - '../src/Entity/'
-            - '../src/Kernel.php'
+  # makes classes in src/ available to be used as services
+  # this creates a service per class whose id is the fully-qualified class name
+  App\:
+    resource: '../src/'
+    exclude:
+      - '../src/DependencyInjection/'
+      - '../src/Entity/'
+      - '../src/Kernel.php'
 
-    # add more service definitions when explicit configuration is needed
-    # please note that last definitions always *replace* previous ones
+  # add more service definitions when explicit configuration is needed
+  # please note that last definitions always *replace* previous ones
+
+  # Override the default purger factory in order to skip foreign key checks
+  App\Service\CustomPurgerService:
+    tags:
+      - { name: 'doctrine.fixtures.purger_factory', alias: 'fixtures_purger' }
