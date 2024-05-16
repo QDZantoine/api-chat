@@ -21,6 +21,13 @@ class Message
     #[ORM\Column(length: 1000)]
     private ?string $text = null;
 
+    #[ORM\ManyToOne(inversedBy: 'messages')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Conversation $conversation = null;
+
+    #[ORM\Column]
+    private ?int $userKind = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -46,6 +53,30 @@ class Message
     public function setText(string $text): static
     {
         $this->text = $text;
+
+        return $this;
+    }
+
+    public function getConversation(): ?Conversation
+    {
+        return $this->conversation;
+    }
+
+    public function setConversation(?Conversation $conversation): static
+    {
+        $this->conversation = $conversation;
+
+        return $this;
+    }
+
+    public function getUserKind(): ?int
+    {
+        return $this->userKind;
+    }
+
+    public function setUserKind(int $userKind): static
+    {
+        $this->userKind = $userKind;
 
         return $this;
     }
