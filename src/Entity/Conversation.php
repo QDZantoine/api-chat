@@ -10,43 +10,75 @@ use Doctrine\ORM\Mapping as ORM;
 #[ApiResource]
 class Conversation
 {
-    #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column]
-    private ?int $id = null;
+	#[ORM\Id]
+	#[ORM\GeneratedValue]
+	#[ORM\Column]
+	private ?int $id = null;
 
-    #[ORM\Column]
-    private ?\DateTimeImmutable $createdAt = null;
+	#[ORM\Column]
+	private ?\DateTimeImmutable $createdAt = null;
 
-    #[ORM\Column]
-    private ?int $nbMessages = null;
+	#[ORM\Column]
+	private ?int $nbMessages = null;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
+	#[ORM\ManyToOne(inversedBy: 'conversationUsers')]
+	#[ORM\JoinColumn(nullable: false)]
+	private ?User $user = null;
 
-    public function getCreatedAt(): ?\DateTimeImmutable
-    {
-        return $this->createdAt;
-    }
+	#[ORM\ManyToOne(inversedBy: 'conversationBots')]
+	#[ORM\JoinColumn(nullable: false)]
+	private ?User $bot = null;
 
-    public function setCreatedAt(\DateTimeImmutable $createdAt): static
-    {
-        $this->createdAt = $createdAt;
+	public function getId(): ?int
+	{
+		return $this->id;
+	}
 
-        return $this;
-    }
+	public function getCreatedAt(): ?\DateTimeImmutable
+	{
+		return $this->createdAt;
+	}
 
-    public function getNbMessages(): ?int
-    {
-        return $this->nbMessages;
-    }
+	public function setCreatedAt(\DateTimeImmutable $createdAt): static
+	{
+		$this->createdAt = $createdAt;
 
-    public function setNbMessages(int $nbMessages): static
-    {
-        $this->nbMessages = $nbMessages;
+		return $this;
+	}
 
-        return $this;
-    }
+	public function getNbMessages(): ?int
+	{
+		return $this->nbMessages;
+	}
+
+	public function setNbMessages(int $nbMessages): static
+	{
+		$this->nbMessages = $nbMessages;
+
+		return $this;
+	}
+
+	public function getUser(): ?User
+	{
+		return $this->user;
+	}
+
+	public function setUser(?User $user): static
+	{
+		$this->user = $user;
+
+		return $this;
+	}
+
+	public function getBot(): ?User
+	{
+		return $this->bot;
+	}
+
+	public function setBot(?User $bot): static
+	{
+		$this->bot = $bot;
+
+		return $this;
+	}
 }

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -35,6 +37,24 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     #[ORM\Column]
     private ?string $password = null;
+
+    /**
+     * @var Collection<int, Conversation>
+     */
+    #[ORM\OneToMany(targetEntity: Conversation::class, mappedBy: 'userId', orphanRemoval: true)]
+    private Collection $conversationUsers;
+
+    /**
+     * @var Collection<int, Conversation>
+     */
+    #[ORM\OneToMany(targetEntity: Conversation::class, mappedBy: 'botId', orphanRemoval: true)]
+    private Collection $conversationBots;
+
+    public function __construct()
+    {
+        $this->conversationUsers = new ArrayCollection();
+        $this->conversationBots = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -109,5 +129,65 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    /**
+     * @return Collection<int, Conversation>
+     */
+    public function getConversationUsers(): Collection
+    {
+        return $this->conversationUsers;
+    }
+
+    public function addConversationUser(Conversation $conversationUser): static
+    {
+        if (!$this->conversationUsers->contains($conversationUser)) {
+            $this->conversationUsers->add($conversationUser);
+            $conversationUser->setUserId($this);
+        }
+
+        return $this;
+    }
+
+    public function removeConversationUser(Conversation $conversationUser): static
+    {
+        if ($this->conversationUsers->removeElement($conversationUser)) {
+            // set the owning side to null (unless already changed)
+            if ($conversationUser->getUserId() === $this) {
+                $conversationUser->setUserId(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Conversation>
+     */
+    public function getConversationBots(): Collection
+    {
+        return $this->conversationBots;
+    }
+
+    public function addConversationBot(Conversation $conversationBot): static
+    {
+        if (!$this->conversationBots->contains($conversationBot)) {
+            $this->conversationBots->add($conversationBot);
+            $conversationBot->setBotId($this);
+        }
+
+        return $this;
+    }
+
+    public function removeConversationBot(Conversation $conversationBot): static
+    {
+        if ($this->conversationBots->removeElement($conversationBot)) {
+            // set the owning side to null (unless already changed)
+            if ($conversationBot->getBotId() === $this) {
+                $conversationBot->setBotId(null);
+            }
+        }
+
+        return $this;
     }
 }
