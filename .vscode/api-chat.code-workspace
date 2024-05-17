@@ -5,8 +5,8 @@
 		}
 	],
 	"settings": {
-		"php-cs-fixer.executable": "/opt/git/qdz-antoine/spot-to-work/vendor/bin/php-cs-fixer",
-		"php-cs-fixer.configFile": "/opt/git/qdz-antoine/spot-to-work/.php-cs-fixer.php",
+		"php-cs-fixer.executable": "/opt/git/qdz-antoine/api-chat/vendor/bin/php-cs-fixer",
+		"php-cs-fixer.configFile": "/opt/git/qdz-antoine/api-chat/.php-cs-fixer.php",
 		"php-cs-fixer.onSave": true,
 		"editor.insertSpaces": false,
 		"editor.tabSize": 2,
@@ -26,20 +26,6 @@
 		},
 		"twig-language-2.spaceClose": true,
 		"twig-language-2.preserveComment": true,
-		"sqltools.connections": [
-			{
-				"mysqlOptions": {
-					"authProtocol": "default"
-				},
-				"previewLimit": 50,
-				"server": "localhost",
-				"port": 3306,
-				"driver": "MariaDB",
-				"name": "spot-to-work",
-				"database": "spottowork",
-				"username": "userspotwork"
-			}
-		]
 	},
 	"launch": {
 		"version": "0.2.0",
