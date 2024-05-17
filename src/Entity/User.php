@@ -2,13 +2,15 @@
 
 namespace App\Entity;
 
-use App\Repository\UserRepository;
-use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
-use Symfony\Component\Security\Core\User\UserInterface;
 use ApiPlatform\Doctrine\Orm\Filter\OrderFilter;
 use ApiPlatform\Metadata\ApiFilter;
 use ApiPlatform\Metadata\ApiResource;
+use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ApiResource]
 #[ApiFilter(OrderFilter::class)]
@@ -16,98 +18,176 @@ use ApiPlatform\Metadata\ApiResource;
 #[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_USERNAME', fields: ['username'])]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
-    #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column]
-    private ?int $id = null;
+	#[ORM\Id]
+	#[ORM\GeneratedValue]
+	#[ORM\Column]
+	private ?int $id = null;
 
-    #[ORM\Column(length: 180)]
-    private ?string $username = null;
+	#[ORM\Column(length: 180)]
+	private ?string $username = null;
 
-    /**
-     * @var list<string> The user roles
-     */
-    #[ORM\Column]
-    private array $roles = [];
+	/**
+	 * @var list<string> The user roles
+	 */
+	#[ORM\Column]
+	private array $roles = [];
 
-    /**
-     * @var string The hashed password
-     */
-    #[ORM\Column]
-    private ?string $password = null;
+	/**
+	 * @var string The hashed password
+	 */
+	#[ORM\Column]
+	private ?string $password = null;
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
+	/**
+	 * @var Collection<int, Conversation>
+	 */
+	#[ORM\OneToMany(targetEntity: Conversation::class, mappedBy: 'userId', orphanRemoval: true)]
+	private Collection $conversationUsers;
 
-    public function getUsername(): ?string
-    {
-        return $this->username;
-    }
+	/**
+	 * @var Collection<int, Conversation>
+	 */
+	#[ORM\OneToMany(targetEntity: Conversation::class, mappedBy: 'botId', orphanRemoval: true)]
+	private Collection $conversationBots;
 
-    public function setUsername(string $username): static
-    {
-        $this->username = $username;
+	public function __construct()
+	{
+		$this->conversationUsers = new ArrayCollection();
+		$this->conversationBots = new ArrayCollection();
+	}
 
-        return $this;
-    }
+	public function getId(): ?int
+	{
+		return $this->id;
+	}
 
-    /**
-     * A visual identifier that represents this user.
-     *
-     * @see UserInterface
-     */
-    public function getUserIdentifier(): string
-    {
-        return (string) $this->username;
-    }
+	public function getUsername(): ?string
+	{
+		return $this->username;
+	}
 
-    /**
-     * @see UserInterface
-     *
-     * @return list<string>
-     */
-    public function getRoles(): array
-    {
-        $roles = $this->roles;
-        // guarantee every user at least has ROLE_USER
-        $roles[] = 'ROLE_USER';
+	public function setUsername(string $username): static
+	{
+		$this->username = $username;
 
-        return array_unique($roles);
-    }
+		return $this;
+	}
 
-    /**
-     * @param list<string> $roles
-     */
-    public function setRoles(array $roles): static
-    {
-        $this->roles = $roles;
+	/**
+	 * A visual identifier that represents this user.
+	 *
+	 * @see UserInterface
+	 */
+	public function getUserIdentifier(): string
+	{
+		return (string) $this->username;
+	}
 
-        return $this;
-    }
+	/**
+	 * @see UserInterface
+	 *
+	 * @return list<string>
+	 */
+	public function getRoles(): array
+	{
+		$roles = $this->roles;
+		// guarantee every user at least has ROLE_USER
+		$roles[] = 'ROLE_USER';
 
-    /**
-     * @see PasswordAuthenticatedUserInterface
-     */
-    public function getPassword(): string
-    {
-        return $this->password;
-    }
+		return array_unique($roles);
+	}
 
-    public function setPassword(string $password): static
-    {
-        $this->password = $password;
+	/**
+	 * @param list<string> $roles
+	 */
+	public function setRoles(array $roles): static
+	{
+		$this->roles = $roles;
 
-        return $this;
-    }
+		return $this;
+	}
 
-    /**
-     * @see UserInterface
-     */
-    public function eraseCredentials(): void
-    {
-        // If you store any temporary, sensitive data on the user, clear it here
-        // $this->plainPassword = null;
-    }
+	/**
+	 * @see PasswordAuthenticatedUserInterface
+	 */
+	public function getPassword(): string
+	{
+		return $this->password;
+	}
+
+	public function setPassword(string $password): static
+	{
+		$this->password = $password;
+
+		return $this;
+	}
+
+	/**
+	 * @see UserInterface
+	 */
+	public function eraseCredentials(): void
+	{
+		// If you store any temporary, sensitive data on the user, clear it here
+		// $this->plainPassword = null;
+	}
+
+	/**
+	 * @return Collection<int, Conversation>
+	 */
+	public function getConversationUsers(): Collection
+	{
+		return $this->conversationUsers;
+	}
+
+	public function addConversationUser(Conversation $conversationUser): static
+	{
+		if (!$this->conversationUsers->contains($conversationUser)) {
+			$this->conversationUsers->add($conversationUser);
+			$conversationUser->setUser($this);
+		}
+
+		return $this;
+	}
+
+	public function removeConversationUser(Conversation $conversationUser): static
+	{
+		if ($this->conversationUsers->removeElement($conversationUser)) {
+			// set the owning side to null (unless already changed)
+			if ($conversationUser->getUser() === $this) {
+				$conversationUser->setUser(null);
+			}
+		}
+
+		return $this;
+	}
+
+	/**
+	 * @return Collection<int, Conversation>
+	 */
+	public function getConversationBots(): Collection
+	{
+		return $this->conversationBots;
+	}
+
+	public function addConversationBot(Conversation $conversationBot): static
+	{
+		if (!$this->conversationBots->contains($conversationBot)) {
+			$this->conversationBots->add($conversationBot);
+			$conversationBot->setBot($this);
+		}
+
+		return $this;
+	}
+
+	public function removeConversationBot(Conversation $conversationBot): static
+	{
+		if ($this->conversationBots->removeElement($conversationBot)) {
+			// set the owning side to null (unless already changed)
+			if ($conversationBot->getBot() === $this) {
+				$conversationBot->setBot(null);
+			}
+		}
+
+		return $this;
+	}
 }
