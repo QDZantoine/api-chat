@@ -45,7 +45,9 @@ class MessageFixture extends Fixture implements DependentFixtureInterface
 		}
 
 		$res = [];
-		while (($data = fgetcsv($handle, null, ' ')) !== false) {
+		while (($data = fgetcsv($handle, null, "\t")) !== false) {
+			// Remove unused first column = id
+			array_shift($data);
 			$res[] = $data;
 		}
 		fclose($handle);
