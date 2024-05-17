@@ -12,7 +12,7 @@ services:
     autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
     bind: # defines the scalar arguments once and apply them to any service defined/created in this file
       $fixtureUserPassword: '%env(FIXTURE_USER_PASSWORD)%'
-      #$projectDir: '%kernel.project_dir%'
+      $projectDir: '%kernel.project_dir%'
       #$adminEmail: '%env(ADMIN_EMAIL)%'
       #$contactEmail: '%env(CONTACT_EMAIL)%'
       #$noreplyEmail: '%env(NOREPLY_EMAIL)%'

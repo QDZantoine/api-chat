@@ -8,7 +8,7 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
 
-class ConversationFixtures extends Fixture implements DependentFixtureInterface
+class ConversationFixture extends Fixture implements DependentFixtureInterface
 {
 	public function getDependencies()
 	{

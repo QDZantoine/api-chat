@@ -1,0 +1,133 @@
+1	2024-05-01 08:01:00	Hello!	1	1
+2	2024-05-01 08:01:30	Hi there!	1	2
+3	2024-05-01 08:02:00	How are you?	1	1
+4	2024-05-01 08:02:30	I am good, thank you!	1	2
+5	2024-05-01 08:03:00	What can you do?	1	1
+6	2024-05-01 08:03:30	I can chat with you.	1	2
+7	2024-05-01 08:04:00	Tell me a joke.	1	1
+8	2024-05-01 08:04:30	Why did the scarecrow win an award? Because he was outstanding in his field!	1	2
+9	2024-05-01 08:05:00	Haha, that's funny!	1	1
+10	2024-05-01 08:05:30	Glad you liked it!	1	2
+11	2024-05-01 08:06:00	What is the weather today?	1	1
+12	2024-05-01 08:06:30	It is sunny and warm.	1	2
+13	2024-05-01 08:07:00	Great, I will go for a walk.	1	1
+14	2024-05-01 08:07:30	Enjoy your walk!	1	2
+15	2024-05-01 08:08:00	Thank you!	1	1
+16	2024-05-01 08:08:30	You are welcome!	1	2
+17	2024-05-01 08:09:00	What is your name?	1	1
+18	2024-05-01 08:09:30	I am a chatbot.	1	2
+19	2024-05-01 08:10:00	Nice to meet you.	1	1
+20	2024-05-01 08:10:30	Nice to meet you too!	1	2
+21	2024-05-01 08:11:00	What time is it?	1	1
+22	2024-05-01 08:11:30	It is 8:11 AM.	1	2
+23	2024-05-01 08:12:00	Thanks.	1	1
+24	2024-05-01 08:12:30	You are welcome!	1	2
+25	2024-05-01 08:13:00	Goodbye!	1	1
+26	2024-05-01 09:31:00	Hey!	2	1
+27	2024-05-01 09:31:30	Hello!	2	2
+28	2024-05-01 09:32:00	What are you up to?	2	1
+29	2024-05-01 09:32:30	Just chatting with you.	2	2
+30	2024-05-01 09:33:00	Cool!	2	1
+31	2024-05-01 09:33:30	Indeed.	2	2
+32	2024-05-01 09:34:00	Do you like music?	2	1
+33	2024-05-01 09:34:30	Yes, I do!	2	2
+34	2024-05-01 09:35:00	What kind of music?	2	1
+35	2024-05-01 09:35:30	All kinds.	2	2
+36	2024-05-01 09:36:00	Nice!	2	1
+37	2024-05-01 09:36:30	Absolutely!	2	2
+38	2024-05-01 09:37:00	What is your favorite color?	2	1
+39	2024-05-01 09:37:30	Blue.	2	2
+40	2024-05-01 09:38:00	Mine too!	2	1
+41	2024-05-01 09:38:30	That is great!	2	2
+42	2024-05-01 09:39:00	What is your name?	2	1
+43	2024-05-01 09:39:30	I am a chatbot.	2	2
+44	2024-05-01 09:40:00	Nice to meet you.	2	1
+45	2024-05-01 09:40:30	Nice to meet you too!	2	2
+46	2024-05-01 09:41:00	What time is it?	2	1
+47	2024-05-01 09:41:30	It is 9:41 AM.	2	2
+48	2024-05-01 09:42:00	Thanks.	2	1
+49	2024-05-01 09:42:30	You are welcome!	2	2
+50	2024-05-01 09:43:00	Goodbye!	2	1
+51	2024-05-01 11:01:00	Hi!	3	1
+52	2024-05-01 11:01:30	Hello!	3	2
+53	2024-05-01 11:02:00	How are you?	3	1
+54	2024-05-01 11:02:30	I am good, thank you!	3	2
+55	2024-05-01 11:03:00	What is your name?	3	1
+56	2024-05-01 11:03:30	I am a chatbot.	3	2
+57	2024-05-01 11:04:00	Nice to meet you.	3	1
+58	2024-05-01 11:04:30	Nice to meet you too!	3	2
+59	2024-05-01 11:05:00	What is your favorite color?	3	1
+60	2024-05-01 11:05:30	Blue.	3	2
+61	2024-05-01 11:06:00	Mine too!	3	1
+62	2024-05-01 11:06:30	That is great!	3	2
+63	2024-05-01 11:07:00	What is your favorite food?	3	1
+64	2024-05-01 11:07:30	Pizza.	3	2
+65	2024-05-01 11:08:00	Yummy!	3	1
+66	2024-05-01 11:08:30	Indeed.	3	2
+67	2024-05-01 11:09:00	Do you like sports?	3	1
+68	2024-05-01 11:09:30	Yes, I do!	3	2
+69	2024-05-01 11:10:00	Which ones?	3	1
+70	2024-05-01 11:10:30	Football and basketball.	3	2
+71	2024-05-01 11:11:00	Nice choices!	3	1
+72	2024-05-01 11:11:30	Thank you!	3	2
+73	2024-05-01 11:12:00	What time is it?	3	1
+74	2024-05-01 12:00:00	Hello there!	4	1
+75	2024-05-01 12:01:00	Hi! How can I assist you today?	4	2
+76	2024-05-01 12:02:00	I need help with my account.	4	1
+77	2024-05-01 12:03:00	Sure, what seems to be the issue?	4	2
+78	2024-05-01 12:04:00	I forgot my password.	4	1
+79	2024-05-01 12:05:00	No worries. I can help you reset it.	4	2
+80	2024-05-01 12:06:00	Thanks!	4	1
+81	2024-05-01 12:07:00	You are welcome!	4	2
+82	2024-05-01 12:08:00	How do I reset it?	4	1
+83	2024-05-01 12:09:00	Click on the "Forgot Password" link on the login page.	4	2
+84	2024-05-01 12:10:00	Got it, thanks!	4	1
+85	2024-05-01 12:11:00	Anytime!	4	2
+86	2024-05-01 12:12:00	Can I ask another question?	4	1
+87	2024-05-01 12:13:00	Of course, go ahead.	4	2
+88	2024-05-01 12:14:00	How can I update my profile?	4	1
+89	2024-05-01 12:15:00	Go to settings and select "Update Profile".	4	2
+90	2024-05-01 12:16:00	Thanks again!	4	1
+91	2024-05-01 12:17:00	My pleasure!	4	2
+92	2024-05-01 12:18:00	Have a nice day!	4	1
+93	2024-05-01 12:19:00	You too!	4	2
+94	2024-05-01 12:20:00	Bye!	4	1
+95	2024-05-01 12:21:00	Goodbye!	4	2
+96	2024-05-01 13:00:00	Hey, are you there?	5	1
+97	2024-05-01 13:01:00	Yes, I am here. How can I help?	5	2
+98	2024-05-01 13:02:00	What are your business hours?	5	1
+99	2024-05-01 13:03:00	We are open from 9 AM to 5 PM, Monday to Friday.	5	2
+100	2024-05-01 13:04:00	Great, thank you!	5	1
+101	2024-05-01 13:05:00	Is there anything else I can help with?	5	2
+102	2024-05-01 13:06:00	Yes, I have an issue with my order.	5	1
+103	2024-05-01 13:07:00	Can you please provide your order number?	5	2
+104	2024-05-01 13:08:00	Sure, it is 12345.	5	1
+105	2024-05-01 13:09:00	I am checking it right now.	5	2
+106	2024-05-01 13:10:00	Thank you.	5	1
+107	2024-05-01 13:11:00	It appears there was a delay in shipping.	5	2
+108	2024-05-01 13:12:00	Oh no, when will it arrive?	5	1
+109	2024-05-01 13:13:00	It should arrive by tomorrow.	5	2
+110	2024-05-01 13:14:00	I appreciate your help.	5	1
+111	2024-05-01 13:15:00	No problem!	5	2
+112	2024-05-01 13:16:00	Have a great day!	5	1
+113	2024-05-01 13:17:00	You too!	5	2
+114	2024-05-01 14:00:00	Hi there!	6	1
+115	2024-05-01 14:01:00	Hello! How can I assist you?	6	2
+116	2024-05-01 14:02:00	Can you help me find a product?	6	1
+117	2024-05-01 14:03:00	Sure, what are you looking for?	6	2
+118	2024-05-01 14:04:00	I am looking for a new laptop.	6	1
+119	2024-05-01 14:05:00	Any specific brand in mind?	6	2
+120	2024-05-01 14:06:00	Yes, I am looking for a Dell.	6	1
+121	2024-05-01 14:07:00	We have several models. Do you have a budget?	6	2
+122	2024-05-01 14:08:00	Around $1000.	6	1
+123	2024-05-01 14:09:00	I can suggest some models within that range.	6	2
+124	2024-05-01 14:10:00	That would be great, thank you.	6	1
+125	2024-05-01 14:11:00	You are welcome!	6	2
+126	2024-05-01 14:12:00	Can you also tell me about the warranty?	6	1
+127	2024-05-01 14:13:00	Most models come with a 1-year warranty.	6	2
+128	2024-05-01 14:14:00	Perfect, that works for me.	6	1
+129	2024-05-01 14:15:00	Is there anything else I can assist with?	6	2
+130	2024-05-01 14:16:00	No, that's all for now.	6	1
+131	2024-05-01 14:17:00	Alright, have a great day!	6	2
+132	2024-05-01 14:18:00	Thanks, you too!	6	1
+133	2024-05-01 14:19:00	Goodbye!	6	2
