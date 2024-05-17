@@ -27,6 +27,7 @@ class UserFixture extends Fixture
 
 	public function loadUser(ObjectManager $objectManager): void
 	{
+		$count = 0;
 		foreach ($this->getUserdata() as [
 			$username,
 			$password,
@@ -42,6 +43,7 @@ class UserFixture extends Fixture
 
 			$objectManager->persist($entity);
 			$this->addReference($username, $entity);
+			$this->addReference(User::class.++$count, $entity);
 		}
 		$objectManager->flush();
 	}
