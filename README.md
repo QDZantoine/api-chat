@@ -114,5 +114,4 @@ Run fixtures  (use this command to get the starting DB whitout the data been upl
 composer fixtures
 ```
 
-Open the app in your Browser http://spot-to-work.localhost/
-
+Open the app in your Browser http://api-chat.localhost/
