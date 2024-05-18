@@ -114,7 +114,7 @@ Run fixtures  (use this command to get the starting DB whitout the data been upl
 composer fixtures
 ```
 
-Open the app in your Browser http://api-chat.localhost/
+Open the app in your Browser http://api-chat.localhost/api
 
 ### Command to test the api with curl:
 
