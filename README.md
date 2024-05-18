@@ -115,3 +115,9 @@ composer fixtures
 ```
 
 Open the app in your Browser http://api-chat.localhost/
+
+### Command to test the api with curl:
+
+```bash
+curl -X 'GET' 'http://api-chat.localhost/api/conversations?page=1' -H 'accept: application/ld+json'
+```
