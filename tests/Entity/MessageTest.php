@@ -1,5 +1,4 @@
 <?php
-// tests/Entity/MessageTest.php
 
 namespace App\Tests\Entity;
 
