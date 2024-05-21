@@ -2,6 +2,7 @@
 
 
 ![Code Coverage](https://github.com/QDZantoine/api-chat/raw/main/.github/badges/coverage.svg)
+![image]({https://img.shields.io/badge/Symfony-000000?style=for-the-badge&logo=Symfony&logoColor=white})
 
 
 
