@@ -12,6 +12,7 @@
         "doctrine/doctrine-bundle": "^2.12",
         "doctrine/doctrine-migrations-bundle": "^3.3",
         "doctrine/orm": "^3.1",
+        "jaschilz/php-coverage-badger": "^2.0",
         "nelmio/cors-bundle": "^2.4",
         "phpdocumentor/reflection-docblock": "^5.4",
         "phpstan/phpdoc-parser": "^1.29",
@@ -74,6 +75,9 @@
 		],
         "fixtures": [
 			"bin/console doctrine:fixtures:load --env=test --purger=fixtures_purger -n"
+		],
+        "test": [
+			"if php -m | grep -q 'xdebug'; then ./bin/phpunit -c ./phpunit.xml --exclude-group failure --coverage-clover var/coverage/coverage.xml && vendor/bin/php-coverage-badger var/coverage/coverage.xml .github/badges/coverage.svg; else ./bin/phpunit -c ./phpunit.xml --exclude-group failure --no-coverage; fi"
 		]
     },
     "conflict": {
@@ -88,6 +92,7 @@
     "require-dev": {
         "doctrine/doctrine-fixtures-bundle": "*",
         "friendsofphp/php-cs-fixer": "^3.57",
+        "phpunit/phpunit": "^11.1",
         "symfony/maker-bundle": "^1.59"
     }
 }
