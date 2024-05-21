@@ -1,6 +1,7 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/antoinequendez/)
 
 # Api chat
+![Code Coverage](https://github.com/QDZantoine/api-chat/branch/main/.github/badges/coverage.svg)
 
 ![Language](https://img.shields.io/badge/language-EN-green)
 
