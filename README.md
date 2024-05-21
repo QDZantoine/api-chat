@@ -96,9 +96,6 @@ L'API est documentée et accessible via une interface Swagger, offrant une vue c
 - MySQL
 - Web server Apache 2.4
 
-## Additional Documentation
-
-
 ## Install application
 
 Clone [api-chat repository](https://github.com/QDZantoine/api-chat)
@@ -197,3 +194,4 @@ Open the app in your Browser http://api-chat.localhost/api
 ```bash
 curl -X 'GET' 'http://api-chat.localhost/api/conversations?page=1' -H 'accept: application/ld+json'
 ```
+## Additional Documentation
