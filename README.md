@@ -1,7 +1,45 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/antoinequendez/)
 
 # Api chat
+
 ![Code Coverage](https://github.com/QDZantoine/api-chat/raw/main/.github/badges/coverage.svg)
+
+ ## Projet d'API de Conversations entre Utilisateurs et Chatbot
+
+## Description
+
+Ce projet consiste en la création d'une API RESTful avec Symfony 7 pour gérer les conversations entre utilisateurs et un chatbot. L'API permet de réaliser des opérations CRUD (Create, Read, Update, Delete) sur les conversations et les messages échangés.
+
+## Technologies
+
+- **Backend** : Symfony 7
+- **Base de Données** : MySQL/PostgreSQL
+- **API** : Implémentée avec API Platform, une extension de Symfony
+
+## Documentation de l'API
+
+L'API est documentée et accessible via une interface Swagger, permettant aux développeurs de tester et d'explorer les différentes routes et opérations disponibles.
+
+### Endpoints de l'API
+
+#### Conversation
+
+- **GET** `/api/conversations` : Récupère la collection de ressources de conversation.
+- **POST** `/api/conversations` : Crée une ressource de conversation.
+- **GET** `/api/conversations/{id}` : Récupère une ressource de conversation spécifique.
+- **PUT** `/api/conversations/{id}` : Remplace la ressource de conversation.
+- **DELETE** `/api/conversations/{id}` : Supprime la ressource de conversation.
+- **PATCH** `/api/conversations/{id}` : Met à jour partiellement la ressource de conversation.
+
+#### Message
+
+- **GET** `/api/messages` : Récupère la collection de ressources de message.
+
+### Interface Swagger
+
+L'API est documentée et accessible via une interface Swagger, offrant une vue conviviale pour explorer les endpoints, tester les différentes requêtes et consulter les réponses. Cela facilite grandement le développement et le débogage des intégrations.
+
+![API Chat](public/images/api-chat.png)
 
 
 ## Requirements
@@ -80,14 +118,6 @@ FLUSH PRIVILEGES;
 quit;
 ```	
 
- Setup the .env.local file to access to the database:
-```bash
- touch .env.local
- ```
- To create a symbolic link with .env.local and .env.local.test
- ```bash
- ln -s .env.local .env.test.local
- ```
 
 put the configuration for the DB into this files:
 
@@ -98,6 +128,9 @@ DATABASE_URL=mysqli://apichatuser:'ChangeMe'@127.0.0.1:3306/api-chat?serverVersi
 
 ```bash
 nano .env.local # setup database url
+```
+To create a symbolic link with .env.local and .env.local.test
+```bash
 ln -s .env.local .env.test.local
 ```
 ## Create the database
