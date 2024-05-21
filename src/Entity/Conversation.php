@@ -39,6 +39,8 @@ class Conversation
 
 	public function __construct()
 	{
+		$this->nbMessages = 0;
+		$this->createdAt = new \DateTimeImmutable();
 		$this->messages = new ArrayCollection();
 	}
 
