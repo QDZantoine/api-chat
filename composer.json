@@ -74,6 +74,9 @@
 		],
         "fixtures": [
 			"bin/console doctrine:fixtures:load --env=test --purger=fixtures_purger -n"
+		],
+        "test": [
+			"if php -m | grep -q 'xdebug'; then ./bin/phpunit -c ./phpunit.xml --exclude-group failure --coverage-clover var/coverage/coverage.xml && vendor/bin/php-coverage-badger var/coverage/coverage.xml .github/badges/coverage.svg; else ./bin/phpunit -c ./phpunit.xml --exclude-group failure --no-coverage; fi"
 		]
     },
     "conflict": {
@@ -88,6 +91,7 @@
     "require-dev": {
         "doctrine/doctrine-fixtures-bundle": "*",
         "friendsofphp/php-cs-fixer": "^3.57",
+        "phpunit/phpunit": "^11.1",
         "symfony/maker-bundle": "^1.59"
     }
 }

@@ -1,0 +1,1 @@
+{"version":1,"defects":[],"times":{"App\\Tests\\Entity\\ConversationTest::testConversationCreation":0.051,"App\\Tests\\Entity\\ConversationTest::testSetAndGetUser":0.003,"App\\Tests\\Entity\\ConversationTest::testSetAndGetBot":0.002,"App\\Tests\\Entity\\ConversationTest::testAddAndRemoveMessage":0.003}}
