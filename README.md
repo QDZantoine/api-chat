@@ -4,6 +4,50 @@
 
 ![Code Coverage](https://github.com/QDZantoine/api-chat/raw/main/.github/badges/coverage.svg)
 
+
+
+![Language](https://img.shields.io/badge/language-EN-green)
+
+## Description
+
+This project involves the creation of a RESTful API using Symfony 7 to manage conversations between users and a chatbot. The API allows for CRUD (Create, Read, Update, Delete) operations on conversations and exchanged messages.
+
+## Technologies
+
+- **Backend**: Symfony 7
+- **Database**: MySQL/PostgreSQL
+- **API**: Implemented with API Platform, an extension of Symfony
+
+## API Documentation
+
+The API is documented and accessible via a Swagger interface, allowing developers to test and explore the various routes and available operations.
+
+### API Endpoints
+
+#### Conversation
+
+- **GET** `/api/conversations`: Retrieves the collection of conversation resources.
+- **POST** `/api/conversations`: Creates a conversation resource.
+- **GET** `/api/conversations/{id}`: Retrieves a specific conversation resource.
+- **PUT** `/api/conversations/{id}`: Replaces the conversation resource.
+- **DELETE** `/api/conversations/{id}`: Deletes the conversation resource.
+- **PATCH** `/api/conversations/{id}`: Partially updates the conversation resource.
+
+#### Message
+
+- **GET** `/api/messages`: Retrieves the collection of message resources.
+
+### Swagger Interface
+
+The API is documented and accessible via a Swagger interface, offering a user-friendly view to explore the endpoints, test various requests, and view responses. This greatly facilitates development and debugging of integrations.
+
+![API Chat](public/images/api-chat.png)
+
+
+
+
+![Langue](https://img.shields.io/badge/langue-FR-blue)
+
  ## Projet d'API de Conversations entre Utilisateurs et Chatbot
 
 ## Description
