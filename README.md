@@ -1,8 +1,11 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/antoinequendez/)
 
-# Api chat
 
 ![Code Coverage](https://github.com/QDZantoine/api-chat/raw/main/.github/badges/coverage.svg)
+
+
+
+# Api chat
 
 
 
@@ -83,7 +86,6 @@ L'API est documentée et accessible via une interface Swagger, permettant aux d�
 
 L'API est documentée et accessible via une interface Swagger, offrant une vue conviviale pour explorer les endpoints, tester les différentes requêtes et consulter les réponses. Cela facilite grandement le développement et le débogage des intégrations.
 
-![API Chat](public/images/api-chat.png)
 
 
 ## Requirements
