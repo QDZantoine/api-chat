@@ -3,10 +3,6 @@
 # Api chat
 ![Code Coverage](https://github.com/QDZantoine/api-chat/raw/main/.github/badges/coverage.svg)
 
-![Language](https://img.shields.io/badge/language-EN-green)
-
-![Langue](https://img.shields.io/badge/langue-FR-blue)
-
 
 ## Requirements
 
