@@ -194,3 +194,6 @@ Open the app in your Browser http://api-chat.localhost/api
 curl -X 'GET' 'http://api-chat.localhost/api/conversations?page=1' -H 'accept: application/ld+json'
 ```
 ## Additional Documentation
+-  [API Platform] (https://api-platform.com/)
+-  [Coverage Badger] (https://github.com/JASchilz/PHPCoverageBadge/blob/master/coverage-badger.php)
+- [PHPUnit](https://phpunit.de/index.html)
