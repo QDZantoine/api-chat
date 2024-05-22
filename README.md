@@ -7,9 +7,6 @@
 # Api chat
 
 
-
-![Language](https://img.shields.io/badge/language-EN-green)
-
 ## Description
 
 This project involves the creation of a RESTful API using Symfony 7 to manage conversations between users and a chatbot. The API allows for CRUD (Create, Read, Update, Delete) operations on conversations and exchanged messages.
@@ -104,9 +101,6 @@ sudo apache2ctl restart
 ```
 ## Setup the DB
 
-```sql
-create database `api-chat` CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-```
 generate a password for the user of the database that you gonna create:
 ```bash
 echo "$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 13)"
@@ -153,7 +147,8 @@ Open the app in your Browser http://api-chat.localhost/api
 ```bash
 curl -X 'GET' 'http://api-chat.localhost/api/conversations?page=1' -H 'accept: application/ld+json'
 ```
-## Additional Documentation
--  [API Platform] (https://api-platform.com/)
--  [Coverage Badger] (https://github.com/JASchilz/PHPCoverageBadge/blob/master/coverage-badger.php)
-- [PHPUnit](https://phpunit.de/index.html)
+## Front-end API
+
+You can use the project Front-chat:
+
+[API-chat](https://github.com/QDZantoine/api-chat#)
