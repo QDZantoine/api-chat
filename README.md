@@ -47,46 +47,6 @@ The API is documented and accessible via a Swagger interface, offering a user-fr
 
 
 
-
-![Langue](https://img.shields.io/badge/langue-FR-blue)
-
- ## Projet d'API de Conversations entre Utilisateurs et Chatbot
-
-## Description
-
-Ce projet consiste en la création d'une API RESTful avec Symfony 7 pour gérer les conversations entre utilisateurs et un chatbot. L'API permet de réaliser des opérations CRUD (Create, Read, Update, Delete) sur les conversations et les messages échangés.
-
-## Technologies
-
-- **Backend** : Symfony 7
-- **Base de Données** : MySQL/PostgreSQL
-- **API** : Implémentée avec API Platform, une extension de Symfony
-
-## Documentation de l'API
-
-L'API est documentée et accessible via une interface Swagger, permettant aux développeurs de tester et d'explorer les différentes routes et opérations disponibles.
-
-### Endpoints de l'API
-
-#### Conversation
-
-- **GET** `/api/conversations` : Récupère la collection de ressources de conversation.
-- **POST** `/api/conversations` : Crée une ressource de conversation.
-- **GET** `/api/conversations/{id}` : Récupère une ressource de conversation spécifique.
-- **PUT** `/api/conversations/{id}` : Remplace la ressource de conversation.
-- **DELETE** `/api/conversations/{id}` : Supprime la ressource de conversation.
-- **PATCH** `/api/conversations/{id}` : Met à jour partiellement la ressource de conversation.
-
-#### Message
-
-- **GET** `/api/messages` : Récupère la collection de ressources de message.
-
-### Interface Swagger
-
-L'API est documentée et accessible via une interface Swagger, offrant une vue conviviale pour explorer les endpoints, tester les différentes requêtes et consulter les réponses. Cela facilite grandement le développement et le débogage des intégrations.
-
-
-
 ## Requirements
 
 - PHP 8.2
