@@ -94,6 +94,8 @@
         "doctrine/doctrine-fixtures-bundle": "*",
         "friendsofphp/php-cs-fixer": "^3.57",
         "phpunit/phpunit": "^11.1",
-        "symfony/maker-bundle": "^1.59"
+        "symfony/maker-bundle": "^1.59",
+        "symfony/stopwatch": "7.0.*",
+        "symfony/web-profiler-bundle": "7.0.*"
     }
 }
