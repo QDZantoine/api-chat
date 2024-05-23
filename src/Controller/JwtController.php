@@ -4,29 +4,25 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Repository\UserRepository;
-use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Lexik\Bundle\JWTAuthenticationBundle\Services\JWTTokenManagerInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * JWT Controller
+ * JWT Controller.
  */
 class JwtController extends AbstractController
 {
-
 	/**
-	 * Authenticate a user from the request and return a JWT (Json Web Token)
+	 * Authenticate a user from the request and return a JWT (Json Web Token).
 	 *
-	 * @param Request $request
-	 * @param JWTTokenManagerInterface $JWTManager
 	 * @return JsonResponse
 	 */
-	#[Route("/api/login_check", methods:["POST"], name:"login_check")]
-	public function getTokenUser(Request $request, UserPasswordHasherInterface $hasher, JWTTokenManagerInterface $JWTManager,UserRepository $userRepository)
+	#[Route('/api/login_check', methods: ['POST'], name: 'login_check')]
+	public function getTokenUser(Request $request, UserPasswordHasherInterface $hasher, JWTTokenManagerInterface $JWTManager, UserRepository $userRepository)
 	{
 		$request = $this->transformJsonBody($request);
 		$username = $request->get('username');
@@ -36,9 +32,6 @@ class JwtController extends AbstractController
 		}
 
 		// Get the user
-		
-		/** @var UserRepository $userRep */
-		$userRepository->getRepository(User::class);
 		/** @var User $user */
 		$user = $userRepository->findOneByUsername($username);
 		if (!$user) {
@@ -51,18 +44,18 @@ class JwtController extends AbstractController
 		}
 
 		return new JsonResponse([
-			'token' => $JWTManager->create($user)
+			'token' => $JWTManager->create($user),
 		]);
 	}
 
 	/**
-	 * Get JSON payloads in POST request
+	 * Get JSON payloads in POST request.
 	 */
 	private function transformJsonBody(Request $request): Request
 	{
 		$data = json_decode($request->getContent(), true);
 
-		if ($data === null) {
+		if (null === $data) {
 			return $request;
 		}
 
@@ -72,10 +65,8 @@ class JwtController extends AbstractController
 	}
 
 	/**
-	 * Sets an error message and returns a JSON response
+	 * Sets an error message and returns a JSON response.
 	 *
-	 * @param string $errors
-	 * @param $headers
 	 * @return JsonResponse
 	 */
 	private function respondWithError(string $error)
@@ -85,7 +76,7 @@ class JwtController extends AbstractController
 
 		$data = [
 			'status' => $statusCode,
-			'error' => $error
+			'error' => $error,
 		];
 
 		return new JsonResponse($data, $statusCode, $headers);

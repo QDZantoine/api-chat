@@ -147,7 +147,11 @@ Open the app in your Browser http://api-chat.localhost/api
 php bin/console lexik:jwt:generate-keypair
 ```
 
-### Command to test the api with curl:
+### Test the api with curl
+
+```bash
+curl -X POST -H "Content-Type: application/json" http://api-chat.localhost/api/login_check -d '{"username":"johndoe","password":"test"}'
+```
 
 ```bash
 curl -X 'GET' 'http://api-chat.localhost/api/conversations?page=1' -H 'accept: application/ld+json'
