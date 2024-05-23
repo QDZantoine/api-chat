@@ -142,6 +142,11 @@ composer fixtures
 
 Open the app in your Browser http://api-chat.localhost/api
 
+## Generate the SSL keys for the authentifictaion
+```bash
+php bin/console lexik:jwt:generate-keypair
+```
+
 ### Command to test the api with curl:
 
 ```bash
